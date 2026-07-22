@@ -67,7 +67,7 @@ function Todo() {
 
   return (
 
-    <div className="box1">
+    <div className="box1" id="tasks">
 
       <h1>TODO APP</h1>
 

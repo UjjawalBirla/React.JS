@@ -1,0 +1,267 @@
+.navbar {
+    /* font-size: larger; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  padding: 0 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+  z-index: 1000;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.logo-text {
+  display: flex;
+}
+
+.logo-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  .logo-img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+}
+
+.logo-img:hover {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-letter {
+  display: inline-block;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    text-shadow 0.25s ease;
+}
+
+/* Desktop - Mouse Hover */
+.logo-letter:hover {
+  color: #ffd700;
+
+  transform: translateY(-6px) scale(1.25);
+
+  text-shadow:
+    0 0 5px #ffd700,
+    0 0 10px #ffd700,
+    0 0 20px #ff4d9d;
+}
+
+/* Mobile - Tap */
+.logo-letter:focus {
+  color: #ffd700;
+
+  transform: translateY(-6px) scale(1.25);
+
+  text-shadow:
+    0 0 5px #ffd700,
+    0 0 10px #ffd700,
+    0 0 20px #ff4d9d;
+
+}
+
+.logo-letter:active {
+  color: #ffd700;
+  transform: translateY(-5px) scale(1.25);
+
+  text-shadow:
+    0 0 5px #ffd700,
+    0 0 10px #ffd700,
+    0 0 20px #ff4d9d;
+}
+
+/* .nav-logo span:last-child {
+  font-weight: 900;
+
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #ffd700,
+    #ff4d9d,
+    #7c5cff,
+    #ffffff
+  );
+
+  background-size: 300% 300%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  animation: logoGradient 4s ease infinite;
+}
+
+@keyframes logoGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: rgb(211, 197, 197);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+.theme-btn,
+.menu-btn {
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.theme-btn {
+  padding: 9px 12px;
+  font-size: 18px;
+}
+
+.menu-btn {
+  display: none;
+  padding: 8px 12px;
+  font-size: 23px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .navbar {
+    height: 60px;
+    padding: 0 20px;
+  }
+
+  .nav-logo {
+    font-size: 20px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 170px;
+    padding: 20px;
+    gap: 20px;
+
+    background: rgba(30, 30, 50, 0.85);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+
+/* Smooth theme transition */
+body,
+.navbar,
+.todo-container {
+  transition:
+    background 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: linear-gradient(
+    135deg,
+    #0f0c29,
+    #302b63,
+    #24243e
+  ) !important;
+
+  color: white;
+  
+}
+
+body.dark-mode .navbar {
+  background: rgba(10, 10, 25, 0.55);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+   background-size: 200% 200%;
+  animation: backgroundMove 20s reverse infinite;
+
+  @keyframes backgroundMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+}
+
+body.dark-mode .nav-links {
+  color: white;
+}
+
+body.dark-mode .theme-btn {
+  background: rgba(255, 255, 255, 0.2);
+}

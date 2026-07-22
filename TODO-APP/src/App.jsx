@@ -4,10 +4,13 @@
 // import heroImg from './assets/hero.png'
 // import './App.css'
 import Todo from "./Todo"
+import Navbar from "./Navbar";
+
 function App() {
 
   return (
     <>
+      <Navbar />
       <Todo/>
     </>
   )
