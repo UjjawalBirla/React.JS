@@ -79,7 +79,7 @@
     0 0 20px #ff4d9d;
 }
 
-/* Mobile - Tap */
+/* Mobile - Tap
 .logo-letter:focus {
   color: #ffd700;
 
@@ -90,7 +90,7 @@
     0 0 10px #ffd700,
     0 0 20px #ff4d9d;
 
-}
+} */
 
 .logo-letter:active {
   color: #ffd700;
