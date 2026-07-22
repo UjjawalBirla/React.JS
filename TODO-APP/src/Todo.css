@@ -1,0 +1,372 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+
+  
+  background: conic-gradient(
+    from 225deg,
+    #a5c8e4 0deg,
+    #e4ad47 30deg,
+    #e590dc 60deg,
+    #a67451 90deg,
+    #655cd0 120deg,
+    #604b5e 150deg,
+    #9c44c2 180deg,
+    #df466d 210deg,
+    #e852b2 240deg,
+    #af667e 270deg,
+    #6a80a1 300deg,
+    #5d9d90 330deg,
+    #93b98f 360deg
+  );
+
+  background-size: 200% 200%;
+  animation: backgroundMove 20s reverse infinite;
+}
+
+/* =========================
+   BACKGROUND ANIMATION
+========================= */
+
+@keyframes backgroundMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* =========================
+   TODO CONTAINER
+========================= */
+
+.box1 {
+  width: 500px;
+  min-height: 400px;
+  padding: 35px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 25px;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+
+  animation: boxEntry 0.8s ease;
+}
+
+/* Box opening animation */
+
+@keyframes boxEntry {
+  from {
+    opacity: 0;
+    transform: translateY(-40px) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.box1 h1 {
+  text-align: center;
+
+  color: white;
+
+  font-size: 38px;
+
+  margin-bottom: 30px;
+
+  letter-spacing: 3px;
+
+  text-shadow:
+    0 0 10px #6366f1,
+    0 0 20px #6366f1;
+
+  animation: headingGlow 2s infinite alternate;
+}
+
+@keyframes headingGlow {
+  from {
+    text-shadow: 0 0 5px #6366f1;
+  }
+
+  to {
+    text-shadow:
+      0 0 10px #818cf8,
+      0 0 25px #6366f1,
+      0 0 40px #4f46e5;
+  }
+}
+
+/* =========================
+   FORM
+========================= */
+
+.box2 form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.box2 input {
+  flex: 1;
+
+  padding: 15px 18px;
+
+  border: 2px solid transparent;
+
+  border-radius: 12px;
+
+  outline: none;
+
+  font-size: 16px;
+
+  color: white;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  transition: 0.3s;
+}
+
+.box2 input::placeholder {
+  color: #cbd5e1;
+}
+
+.box2 input:focus {
+  border-color: #818cf8;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  box-shadow:
+    0 0 10px #6366f1,
+    0 0 25px rgba(99, 102, 241, 0.5);
+
+  transform: scale(1.02);
+}
+
+/* =========================
+   ADD BUTTON
+========================= */
+
+.addbtn {
+  border: none;
+
+  padding: 14px 20px;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  color: white;
+
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+
+  transition: all 0.3s ease;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.addbtn:hover {
+  transform: translateY(-3px) scale(1.05);
+
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.5);
+}
+
+.addbtn:active {
+  transform: scale(0.92);
+}
+
+/* Button shine */
+
+.addbtn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -100%;
+
+  width: 100%;
+
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+
+  transition: 0.5s;
+}
+
+.addbtn:hover::before {
+  left: 100%;
+}
+
+/* =========================
+   TODO LIST
+========================= */
+
+ul {
+  list-style: none;
+}
+
+/* =========================
+   TODO ITEM
+========================= */
+
+li {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 15px 18px;
+
+  margin-bottom: 12px;
+
+  color: white;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 12px;
+
+  transition: all 0.3s ease;
+
+  animation: todoEntry 0.5s ease;
+}
+
+/* New Todo animation */
+
+@keyframes todoEntry {
+  from {
+    opacity: 0;
+
+    transform: translateX(-40px) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Todo hover */
+
+li:hover {
+  transform: translateX(5px) scale(1.02);
+
+  background: rgba(255, 255, 255, 0.18);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================
+   TODO TEXT
+========================= */
+
+li span {
+  font-size: 17px;
+
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   DELETE BUTTON
+========================= */
+
+.deletebtn {
+  border: none;
+
+  padding: 9px 15px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  color: white;
+
+  font-weight: bold;
+
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.deletebtn:hover {
+  transform: rotate(-3deg) scale(1.1);
+
+  box-shadow: 0 5px 15px rgba(239, 68, 68, 0.5);
+}
+
+.deletebtn:active {
+  transform: scale(0.85);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+  .box1 {
+    width: 90vw;
+
+    padding: 25px 20px;
+  }
+
+  .box1 h1 {
+    font-size: 30px;
+  }
+
+  .box2 form {
+    flex-direction: column;
+  }
+
+  .addbtn {
+    width: 100%;
+  }
+}
