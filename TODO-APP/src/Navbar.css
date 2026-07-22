@@ -240,10 +240,12 @@ body.dark-mode {
 body.dark-mode .navbar {
   background: rgba(10, 10, 25, 0.55);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-   background-size: 200% 200%;
-  animation: backgroundMove 20s reverse infinite;
 
-  @keyframes backgroundMove {
+  animation: backgroundMove 20s reverse infinite;
+}
+
+/* MUST be outside of body.dark-mode .navbar */
+@keyframes backgroundMove {
   0% {
     background-position: 0% 50%;
   }
@@ -256,7 +258,7 @@ body.dark-mode .navbar {
     background-position: 0% 50%;
   }
 }
-}
+
 
 body.dark-mode .nav-links {
   color: white;
