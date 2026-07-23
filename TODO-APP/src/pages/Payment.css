@@ -1,0 +1,358 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.payment-container {
+  width: 100%;
+  max-width: 750px;
+
+  margin: 40px auto;
+  padding: 25px;
+
+  background-color: rgb(122, 162, 162);
+
+  border-radius: 15px;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.payment-container h1{
+  text-align: center;
+  margin: 10px 0 20px;
+
+  font-size: 36px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  display: flex;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+
+  color: white;
+  background-color: #333;
+
+  padding: 10px 18px;
+
+  border-radius: 8px;
+
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #555;
+}
+
+.nav-link.active {
+  background-color: green;
+}
+
+/* =========================
+   EXPENSE FORM
+========================= */
+
+.expense-form {
+  display: grid;
+
+  grid-template-columns: 2fr 1.5fr 120px 130px;
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+.expense-form input,
+.expense-form select,
+.expense-form button {
+  width: 100%;
+
+  padding: 11px;
+
+  border: none;
+  border-radius: 7px;
+
+  font-size: 15px;
+}
+
+.expense-form input {
+  border: 1px solid #ddd;
+}
+
+.expense-form select {
+  cursor: pointer;
+  background-color: white;
+}
+
+.expense-form button {
+  cursor: pointer;
+
+  background-color: white;
+
+  transition: 0.2s;
+}
+
+.expense-form button:hover {
+  background-color: #eeeeee;
+}
+
+/* =========================
+   TOTAL
+========================= */
+
+.total-expense {
+  margin: 15px 0 20px;
+
+  font-size: 20px;
+}
+
+/* =========================
+   EXPENSE LIST
+========================= */
+
+.expense-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.expense-item {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr 1fr auto;
+
+  align-items: center;
+
+  gap: 10px;
+
+  background-color: white;
+
+  padding: 12px;
+
+  border-radius: 8px;
+}
+
+.expense-item button {
+  border: none;
+
+  padding: 7px 10px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  font-size: 16px;
+}
+
+/* =========================
+   NO EXPENSE
+========================= */
+
+.no-expense {
+  text-align: center;
+
+  color: #444;
+
+  background-color: white;
+
+  padding: 15px;
+
+  border-radius: 8px;
+}
+
+/* =========================
+   HISTORY
+========================= */
+.Navbar{
+    margin-bottom: 20px;
+}
+.history h2 {
+  text-align: center;
+}
+
+.history-item {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr 1fr auto;
+
+  align-items: center;
+
+  gap: 10px;
+
+  background-color: white;
+
+  padding: 12px;
+
+  margin-bottom: 10px;
+
+  border-radius: 8px;
+}
+
+.history-item button {
+  border: none;
+
+  padding: 8px 12px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+}
+
+.no-history {
+  text-align: center;
+
+  background-color: white;
+
+  padding: 15px;
+
+  border-radius: 8px;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  .payment-container {
+    margin: 20px auto;
+
+    padding: 20px;
+  }
+
+  .payment-container h1 {
+    font-size: 30px;
+  }
+
+  .expense-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 500px) {
+  body {
+    padding: 10px;
+  }
+
+  .payment-container {
+    margin: 10px auto;
+
+    padding: 15px;
+
+    border-radius: 10px;
+  }
+
+  /* Heading */
+
+.payment-container h1 {
+    font-size: 25px;
+
+    margin-bottom: 15px;
+  }
+
+  /* Navbar */
+
+  .navbar {
+    width: 100%;
+  }
+
+  .nav-link {
+    flex: 1;
+
+    text-align: center;
+
+    padding: 9px 5px;
+  }
+
+  /* Form */
+
+  .expense-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .expense-form input,
+  .expense-form select,
+  .expense-form button {
+    width: 100%;
+  }
+
+  /* Expense Item */
+
+  .expense-item {
+    grid-template-columns: 1fr auto;
+
+    gap: 8px;
+  }
+
+  .expense-item span {
+    overflow-wrap: anywhere;
+  }
+
+  /* History */
+
+  .history-item {
+    grid-template-columns: 1fr auto;
+
+    gap: 8px;
+  }
+}
+
+/* =================================
+   VERY SMALL MOBILE
+================================= */
+
+@media (max-width: 350px) {
+  .payment-container h1 {
+    font-size: 21px;
+  }
+
+  .payment-container {
+    padding: 10px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+}

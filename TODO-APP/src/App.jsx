@@ -1,19 +1,30 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from './assets/vite.svg'
-// import heroImg from './assets/hero.png'
-// import './App.css'
-import Todo from "./Todo"
+import Todo from "./Todo";
 import Navbar from "./Navbar";
+import Payment from "./pages/Payment";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-
   return (
     <>
       <Navbar />
-      <Todo/>
+
+      <Routes>
+
+        {/* TODO Home Page */}
+        <Route
+          path="/"
+          element={<Todo />}
+        />
+
+        {/* Payment Page */}
+        <Route
+          path="/payment"
+          element={<Payment />}
+        />
+
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

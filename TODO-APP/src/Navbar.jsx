@@ -1,6 +1,7 @@
 import todoLogo from "./assets/todo-logo.png";
 import { useEffect, useState } from "react";
 import "./Navbar.css";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -39,6 +40,8 @@ function Navbar() {
         <a href="#tasks" onClick={() => setMenuOpen(false)}>
           Tasks
         </a>
+
+        <NavLink to="/payment">💰 Payment</NavLink>
 
         <button
           className="theme-btn"
