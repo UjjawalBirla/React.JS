@@ -14,7 +14,7 @@
   box-sizing: border-box;
   z-index: 1000;
 
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(12, 12, 12, 0.12);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
 
@@ -57,7 +57,7 @@
 
 .logo-letter {
   display: inline-block;
-  color: white;
+  color: rgb(15, 15, 15);
   font-weight: 900;
   cursor: pointer;
 
@@ -67,76 +67,6 @@
     text-shadow 0.25s ease;
 }
 
-/* Desktop - Mouse Hover */
-.logo-letter:hover {
-  color: #ffd700;
-
-  transform: translateY(-6px) scale(1.25);
-
-  text-shadow:
-    0 0 5px #ffd700,
-    0 0 10px #ffd700,
-    0 0 20px #ff4d9d;
-}
-
-/* Mobile - Tap
-.logo-letter:focus {
-  color: #ffd700;
-
-  transform: translateY(-6px) scale(1.25);
-
-  text-shadow:
-    0 0 5px #ffd700,
-    0 0 10px #ffd700,
-    0 0 20px #ff4d9d;
-
-} */
-
-.logo-letter:active {
-  color: #ffd700;
-  transform: translateY(-5px) scale(1.25);
-
-  text-shadow:
-    0 0 5px #ffd700,
-    0 0 10px #ffd700,
-    0 0 20px #ff4d9d;
-}
-
-/* .nav-logo span:last-child {
-  font-weight: 900;
-
-  background: linear-gradient(
-    90deg,
-    #ffffff,
-    #ffd700,
-    #ff4d9d,
-    #7c5cff,
-    #ffffff
-  );
-
-  background-size: 300% 300%;
-
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-
-  animation: logoGradient 4s ease infinite;
-}
-
-@keyframes logoGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-} */
-
 .nav-links {
   display: flex;
   align-items: center;
@@ -144,7 +74,7 @@
 }
 
 .nav-links a {
-  color: rgb(211, 197, 197);
+  color: rgb(31, 29, 29);
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
@@ -158,8 +88,8 @@
 .theme-btn,
 .menu-btn {
   border: none;
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
+  background: rgba(0, 0, 0, 0.15);
+  color: rgb(115, 100, 100);
   cursor: pointer;
   border-radius: 10px;
 }
@@ -183,7 +113,7 @@
   }
 
   .nav-logo {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   .menu-btn {
@@ -226,11 +156,12 @@ body,
 
 /* Dark Mode */
 body.dark-mode {
+  
   background: linear-gradient(
     135deg,
     #0f0c29,
-    #302b63,
-    #24243e
+    #141316,
+    #0e0e0e
   ) !important;
 
   color: white;
@@ -238,7 +169,7 @@ body.dark-mode {
 }
 
 body.dark-mode .navbar {
-  background: rgba(10, 10, 25, 0.55);
+  background: rgba(118, 118, 128, 0.55);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
   animation: backgroundMove 20s reverse infinite;
@@ -261,7 +192,7 @@ body.dark-mode .navbar {
 
 
 body.dark-mode .nav-links {
-  color: white;
+  color: rgb(232, 226, 226);
 }
 
 body.dark-mode .theme-btn {

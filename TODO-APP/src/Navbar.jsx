@@ -35,7 +35,9 @@ function Navbar() {
       </div>
 
       <div className={`nav-links ${menuOpen ? "active" : ""}`}>
-        <a href="#">Home</a>
+        <NavLink to="/" end onClick={() => setMenuOpen(false)}>
+          Home
+        </NavLink>
 
         <a href="#tasks" onClick={() => setMenuOpen(false)}>
           Tasks

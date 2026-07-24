@@ -1,7 +1,7 @@
 import Todo from "./Todo";
 import Navbar from "./Navbar";
 import Payment from "./pages/Payment";
-import { NavLink, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
 

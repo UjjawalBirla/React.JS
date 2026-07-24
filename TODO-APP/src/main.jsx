@@ -5,7 +5,7 @@ import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter basename="/React.JS">
+    <BrowserRouter basename="/React.JS/TODO-APP">
       <App />
     </BrowserRouter>
   </StrictMode>
