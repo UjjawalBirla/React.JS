@@ -240,7 +240,7 @@ li {
 
   margin-bottom: 12px;
 
-  color: rgb(9, 9, 9);
+  color: rgb(30, 27, 27);
 
   background: rgba(255, 255, 255, 0.12);
 
@@ -268,6 +268,30 @@ li {
 
     transform: translateX(0) scale(1);
   }
+}
+/* =========================
+   TODO DARK MODE
+========================= */
+
+body.dark-mode .box1 h1 {
+  color: white;
+}
+
+body.dark-mode .box1 li {
+  color: white;
+}
+
+body.dark-mode .box1 li span {
+  color: white;
+}
+
+body.dark-mode .box2 input {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .box2 input::placeholder {
+  color: #d1d1d1;
 }
 
 /* Todo hover */
