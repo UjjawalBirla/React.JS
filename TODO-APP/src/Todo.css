@@ -229,7 +229,7 @@ ul {
    TODO ITEM
 ========================= */
 
-li {
+.box1 li {
   display: flex;
 
   justify-content: space-between;
@@ -240,7 +240,7 @@ li {
 
   margin-bottom: 12px;
 
-  color: rgb(30, 27, 27);
+  color: rgb(243, 240, 240);
 
   background: rgba(255, 255, 255, 0.12);
 
@@ -308,7 +308,7 @@ li:hover {
    TODO TEXT
 ========================= */
 
-li span {
+.box1 li span {
   font-size: 17px;
 
   letter-spacing: 0.5px;
