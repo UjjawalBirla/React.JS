@@ -4,12 +4,13 @@ import MovieList from "../components/MovieList";
 function Home() {
   const [movies, SetMovies] = useState([]);
   const [loading, setLoading] = useState(false);
+  const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
   const inputRef = useRef();
 
   const fetchMovies = async (query) => {
     setLoading(true);
     const res = await fetch(
-      `http://www.omdbapi.com/?apikey=9236f6af&s=${query}`,
+      `https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`,
     );
     const data = await res.json();
     console.log(data);
