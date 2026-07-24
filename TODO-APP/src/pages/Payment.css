@@ -1,310 +1,437 @@
-/* =========================
-   GLOBAL
-========================= */
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 20px;
-
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-}
-
-/* =========================
-   MAIN CONTAINER
-========================= */
+/* =========================================
+   PAYMENT PAGE
+========================================= */
 
 .payment-container {
-  width: 100%;
+  width: calc(100% - 30px);
   max-width: 750px;
-
-  margin: 40px auto;
-  padding: 25px;
+  margin: 60px auto;
+  padding: 28px;
 
   background-color: rgb(122, 162, 162);
 
   border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
 }
 
-/* =========================
-   HEADING
-========================= */
 
-.payment-container h1{
+/* =========================================
+   PAYMENT HEADING
+========================================= */
+
+.payment-container > h1 {
   text-align: center;
-  margin: 10px 0 20px;
-
   font-size: 36px;
+  margin: 5px 0 20px;
+  color: #111;
 }
 
-/* =========================
-   NAVBAR
-========================= */
 
-.navbar {
+/* =========================================
+   PAYMENT NAVBAR
+========================================= */
+
+.payment-navbar {
   display: flex;
   justify-content: center;
+  align-items: center;
 
-  gap: 10px;
+  gap: 8px;
 
   margin-bottom: 20px;
 }
 
-.nav-link {
-  text-decoration: none;
 
-  color: white;
+/* IMPORTANT:
+   .navbar nahi use kar rahe,
+   kyunki main TODO Navbar ki class .navbar hai
+*/
+
+.payment-navbar .nav-link {
+  display: inline-block;
+
+  padding: 10px 20px;
+
   background-color: #333;
+  color: white;
 
-  padding: 10px 18px;
+  text-decoration: none;
 
   border-radius: 8px;
 
-  transition: 0.3s;
-}
-
-.nav-link:hover {
-  background-color: #555;
-}
-
-.nav-link.active {
-  background-color: green;
-}
-
-/* =========================
-   EXPENSE FORM
-========================= */
-
-.expense-form {
-  display: grid;
-
-  grid-template-columns: 2fr 1.5fr 120px 130px;
-
-  gap: 10px;
-
-  margin-bottom: 20px;
-}
-
-.expense-form input,
-.expense-form select,
-.expense-form button {
-  width: 100%;
-
-  padding: 11px;
-
-  border: none;
-  border-radius: 7px;
-
-  font-size: 15px;
-}
-
-.expense-form input {
-  border: 1px solid #ddd;
-}
-
-.expense-form select {
-  cursor: pointer;
-  background-color: white;
-}
-
-.expense-form button {
-  cursor: pointer;
-
-  background-color: white;
+  font-size: 17px;
 
   transition: 0.2s;
 }
 
-.expense-form button:hover {
+
+.payment-navbar .nav-link:hover {
+  background-color: #555;
+}
+
+
+.payment-navbar .nav-link.active {
+  background-color: green;
+}
+
+
+/* =========================================
+   EXPENSE FORM
+========================================= */
+
+.payment-container .expense-form {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 2fr)
+    minmax(0, 2fr)
+    minmax(120px, 1fr)
+    minmax(130px, 1fr);
+
+  gap: 10px;
+
+  width: 100%;
+
+  margin-bottom: 25px;
+}
+
+
+.payment-container .expense-form input,
+.payment-container .expense-form select,
+.payment-container .expense-form button {
+  width: 100%;
+  min-width: 0;
+
+  padding: 12px;
+
+  font-size: 16px;
+
+  border-radius: 7px;
+
+  box-sizing: border-box;
+}
+
+
+.payment-container .expense-form input,
+.payment-container .expense-form select {
+  background-color: white;
+
+  border: 1px solid #ddd;
+
+  outline: none;
+}
+
+
+.payment-container .expense-form input:focus,
+.payment-container .expense-form select:focus {
+  border-color: #555;
+}
+
+
+.payment-container .expense-form button {
+  border: none;
+
+  background-color: white;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.2s;
+}
+
+
+.payment-container .expense-form button:hover {
   background-color: #eeeeee;
 }
 
-/* =========================
-   TOTAL
-========================= */
 
-.total-expense {
-  margin: 15px 0 20px;
+/* =========================================
+   TOTAL EXPENSE
+========================================= */
 
-  font-size: 20px;
+.payment-container .total-expense {
+  margin: 10px 0 25px;
+
+  font-size: 22px;
+
+  color: #111;
 }
 
-/* =========================
-   EXPENSE LIST
-========================= */
 
-.expense-list {
+/* =========================================
+   EXPENSE LIST
+========================================= */
+
+.payment-container .expense-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  width: 100%;
+}
+
+
+.payment-container .expense-item {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 2fr)
+    minmax(90px, 1fr)
+    minmax(90px, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 15px;
+
+  width: 100%;
+
+  padding: 14px 16px;
+
+  background-color: white;
+
+  border-radius: 9px;
+
+  box-sizing: border-box;
+}
+
+
+.payment-container .expense-item span {
+  font-size: 16px;
+
+  overflow-wrap: anywhere;
+}
+
+
+.payment-container .expense-item button {
+  border: none;
+
+  padding: 8px 10px;
+
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  font-size: 17px;
+}
+
+
+/* =========================================
+   NO EXPENSE
+========================================= */
+
+.payment-container .no-expense {
+  width: 100%;
+
+  padding: 15px;
+
+  margin: 0;
+
+  text-align: center;
+
+  background-color: white;
+
+  border-radius: 8px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   HISTORY
+========================================= */
+
+.payment-container .history-container {
+  width: 100%;
+}
+
+
+.payment-container .history-container h2 {
+  text-align: center;
+
+  margin: 5px 0 20px;
+
+  font-size: 26px;
+
+  color: #111;
+}
+
+
+.payment-container .history-list {
   display: flex;
 
   flex-direction: column;
 
-  gap: 10px;
+  gap: 12px;
+
+  width: 100%;
 }
 
-.expense-item {
+
+.payment-container .history-item {
   display: grid;
 
-  grid-template-columns: 2fr 1fr 1fr auto;
+  grid-template-columns:
+    minmax(0, 2fr)
+    minmax(90px, 1fr)
+    minmax(90px, 1fr)
+    auto;
 
   align-items: center;
 
-  gap: 10px;
+  gap: 15px;
+
+  width: 100%;
+
+  padding: 14px 16px;
 
   background-color: white;
 
-  padding: 12px;
+  border-radius: 9px;
 
-  border-radius: 8px;
+  box-sizing: border-box;
 }
 
-.expense-item button {
-  border: none;
 
-  padding: 7px 10px;
-
-  border-radius: 6px;
-
-  cursor: pointer;
-
+.payment-container .history-item span {
   font-size: 16px;
+
+  overflow-wrap: anywhere;
 }
 
-/* =========================
-   NO EXPENSE
-========================= */
 
-.no-expense {
-  text-align: center;
+.payment-container .history-item button {
+  padding: 9px 14px;
 
-  color: #444;
-
-  background-color: white;
-
-  padding: 15px;
-
-  border-radius: 8px;
-}
-
-/* =========================
-   HISTORY
-========================= */
-.Navbar{
-    margin-bottom: 20px;
-}
-.history h2 {
-  text-align: center;
-}
-
-.history-item {
-  display: grid;
-
-  grid-template-columns: 2fr 1fr 1fr auto;
-
-  align-items: center;
-
-  gap: 10px;
-
-  background-color: white;
-
-  padding: 12px;
-
-  margin-bottom: 10px;
-
-  border-radius: 8px;
-}
-
-.history-item button {
   border: none;
 
-  padding: 8px 12px;
-
-  border-radius: 6px;
+  border-radius: 7px;
 
   cursor: pointer;
+
+  white-space: nowrap;
+
+  font-size: 15px;
 }
 
-.no-history {
+
+.payment-container .history-item button:hover {
+  background-color: #ddd;
+}
+
+
+/* =========================================
+   NO HISTORY
+========================================= */
+
+.payment-container .no-history {
+  width: 100%;
+
+  margin: 0;
+
+  padding: 15px;
+
   text-align: center;
 
   background-color: white;
 
-  padding: 15px;
-
   border-radius: 8px;
+
+  box-sizing: border-box;
 }
 
-/* =================================
+
+/* =========================================
    TABLET
-================================= */
+========================================= */
 
 @media (max-width: 768px) {
-  body {
-    padding: 15px;
-  }
 
   .payment-container {
-    margin: 20px auto;
+    width: calc(100% - 24px);
 
-    padding: 20px;
+    margin: 35px auto;
+
+    padding: 22px;
   }
 
-  .payment-container h1 {
+
+  .payment-container > h1 {
     font-size: 30px;
   }
 
-  .expense-form {
+
+  .payment-container .expense-form {
     grid-template-columns: 1fr 1fr;
+  }
+
+
+  .payment-container .expense-item,
+  .payment-container .history-item {
+    grid-template-columns:
+      minmax(0, 2fr)
+      minmax(80px, 1fr)
+      minmax(80px, 1fr)
+      auto;
+
+    gap: 10px;
   }
 }
 
-/* =================================
-   MOBILE
-================================= */
 
-@media (max-width: 500px) {
-  body {
-    padding: 10px;
-  }
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
 
   .payment-container {
-    margin: 10px auto;
+    width: calc(100% - 20px);
+
+    margin: 20px auto;
 
     padding: 15px;
 
-    border-radius: 10px;
+    border-radius: 12px;
   }
+
 
   /* Heading */
 
-.payment-container h1 {
+  .payment-container > h1 {
     font-size: 25px;
 
     margin-bottom: 15px;
   }
 
-  /* Navbar */
 
-  .navbar {
+  /* Payment Navbar */
+
+  .payment-navbar {
     width: 100%;
+
+    gap: 5px;
   }
 
-  .nav-link {
+
+  .payment-navbar .nav-link {
     flex: 1;
+
+    padding: 9px 5px;
 
     text-align: center;
 
-    padding: 9px 5px;
+    font-size: 14px;
   }
+
 
   /* Form */
 
-  .expense-form {
+  .payment-container .expense-form {
     display: flex;
 
     flex-direction: column;
@@ -312,47 +439,114 @@ body {
     gap: 10px;
   }
 
-  .expense-form input,
-  .expense-form select,
-  .expense-form button {
+
+  .payment-container .expense-form input,
+  .payment-container .expense-form select,
+  .payment-container .expense-form button {
     width: 100%;
   }
 
-  /* Expense Item */
 
-  .expense-item {
+  /* Total */
+
+  .payment-container .total-expense {
+    font-size: 18px;
+  }
+
+
+  /* Expense */
+
+  .payment-container .expense-item {
     grid-template-columns: 1fr auto;
 
-    gap: 8px;
+    gap: 7px 10px;
+
+    padding: 12px;
   }
 
-  .expense-item span {
-    overflow-wrap: anywhere;
+
+  .payment-container .expense-item span:nth-child(1) {
+    grid-column: 1;
   }
+
+
+  .payment-container .expense-item span:nth-child(2) {
+    grid-column: 1;
+  }
+
+
+  .payment-container .expense-item span:nth-child(3) {
+    grid-column: 1;
+  }
+
+
+  .payment-container .expense-item button {
+    grid-column: 2;
+
+    grid-row: 1 / 4;
+  }
+
 
   /* History */
 
-  .history-item {
+  .payment-container .history-container h2 {
+    font-size: 22px;
+  }
+
+
+  .payment-container .history-item {
     grid-template-columns: 1fr auto;
 
-    gap: 8px;
+    gap: 7px 10px;
+
+    padding: 12px;
+  }
+
+
+  .payment-container .history-item span:nth-child(1) {
+    grid-column: 1;
+  }
+
+
+  .payment-container .history-item span:nth-child(2) {
+    grid-column: 1;
+  }
+
+
+  .payment-container .history-item span:nth-child(3) {
+    grid-column: 1;
+  }
+
+
+  .payment-container .history-item button {
+    grid-column: 2;
+
+    grid-row: 1 / 4;
   }
 }
 
-/* =================================
+
+/* =========================================
    VERY SMALL MOBILE
-================================= */
+========================================= */
 
 @media (max-width: 350px) {
-  .payment-container h1 {
-    font-size: 21px;
-  }
 
   .payment-container {
+    width: calc(100% - 12px);
+
     padding: 10px;
   }
 
-  .nav-link {
-    font-size: 14px;
+
+  .payment-container > h1 {
+    font-size: 21px;
+  }
+
+
+  .payment-navbar .nav-link {
+    font-size: 12px;
+
+    padding: 8px 3px;
   }
 }
