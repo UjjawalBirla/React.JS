@@ -1,0 +1,17 @@
+# Projects that should not go to React.JS repo
+my-app/
+my-Form-App/
+user/
+
+# Dependencies
+node_modules/
+
+# Build files
+dist/
+
+# Environment variables
+.env
+.env.*
+
+# Logs
+*.log
