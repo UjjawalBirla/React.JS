@@ -42,6 +42,9 @@ function Navbar() {
         <a href="#tasks" onClick={() => setMenuOpen(false)}>
           Tasks
         </a>
+        <NavLink to="/todo-history" onClick={() => setMenuOpen(false)}>
+          🗑️ History
+        </NavLink>
 
         <NavLink to="/payment">💰 Payment</NavLink>
 

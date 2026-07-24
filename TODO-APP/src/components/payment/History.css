@@ -1,0 +1,372 @@
+/* =========================================
+   COMMON HISTORY
+   Todo + Payment dono ke liye
+========================================= */
+
+.common-history {
+  width: 100%;
+  max-width: 700px;
+  margin: 25px auto;
+  padding: 24px;
+
+  background: rgba(92, 84, 84, 0.12);
+  border-radius: 14px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.common-history h2 {
+  margin: 0 0 22px;
+
+  text-align: center;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  color: #111;
+}
+
+
+/* =========================================
+   HISTORY LIST ITEM
+========================================= */
+
+.common-history-item {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(120px, 2fr)
+    minmax(90px, 1fr)
+    minmax(90px, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 14px 16px;
+  margin-bottom: 12px;
+
+  background: rgb(224, 117, 117);
+
+  border-radius: 10px;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.common-history-item:last-child {
+  margin-bottom: 0;
+}
+
+
+.common-history-item:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 4px 10px rgba(20, 18, 18, 0.12);
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.common-history-item span {
+  min-width: 0;
+
+  font-size: 16px;
+
+  color: #222;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* Payment amount ko unnecessary
+   line break hone se bachayega */
+
+.common-history-item span:nth-child(2) {
+  white-space: nowrap;
+
+  font-weight: 600;
+}
+
+
+/* Payment type */
+
+.common-history-item span:nth-child(3) {
+  text-transform: capitalize;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   RESTORE BUTTON
+========================================= */
+
+.common-history-item button {
+  border: none;
+
+  padding: 10px 16px;
+
+  background: #198754;
+  color: white;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.common-history-item button:hover {
+  background: #157347;
+
+  transform: scale(1.03);
+}
+
+
+.common-history-item button:active {
+  transform: scale(0.97);
+}
+
+
+/* =========================================
+   EMPTY HISTORY
+========================================= */
+
+.common-history-empty {
+  width: calc(100% - 30px);
+  max-width: 650px;
+
+  margin: 40px auto;
+  padding: 25px;
+
+  text-align: center;
+
+  background: rgb(122, 162, 162);
+
+  color: #222;
+
+  border-radius: 12px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+body.dark-mode .common-history {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+
+body.dark-mode .common-history h2 {
+  color: white;
+}
+
+
+body.dark-mode .common-history-item {
+  background: #292929;
+}
+
+
+body.dark-mode .common-history-item span {
+  color: #f5f5f5;
+}
+
+
+body.dark-mode .common-history-empty {
+  background: #292929;
+  color: white;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+  .common-history {
+    width: 100%;
+
+    padding: 18px;
+  }
+
+
+  .common-history h2 {
+    font-size: 24px;
+  }
+
+
+  .common-history-item {
+    grid-template-columns:
+      minmax(100px, 2fr)
+      minmax(80px, 1fr)
+      minmax(75px, 1fr)
+      auto;
+
+    gap: 10px;
+
+    padding: 12px;
+  }
+
+
+  .common-history-item span {
+    font-size: 14px;
+  }
+
+
+  .common-history-item button {
+    padding: 9px 12px;
+
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+
+  .common-history {
+    width: 100%;
+
+    margin: 18px auto;
+
+    padding: 14px;
+
+    border-radius: 10px;
+  }
+
+
+  .common-history h2 {
+    font-size: 21px;
+
+    margin-bottom: 15px;
+  }
+
+
+  .common-history-item {
+    display: grid;
+
+    grid-template-columns: 1fr auto;
+
+    gap: 7px 12px;
+
+    padding: 13px;
+  }
+
+
+  /* Title */
+
+  .common-history-item span:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+
+  /* Amount */
+
+  .common-history-item span:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+
+    font-size: 14px;
+  }
+
+
+  /* Receive / Send */
+
+  .common-history-item span:nth-child(3) {
+    grid-column: 1;
+    grid-row: 3;
+
+    font-size: 13px;
+  }
+
+
+  /* Restore */
+
+  .common-history-item button {
+    grid-column: 2;
+
+    grid-row: 1 / 4;
+
+    align-self: center;
+
+    padding: 10px 12px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+  .common-history {
+    padding: 10px;
+  }
+
+
+  .common-history h2 {
+    font-size: 19px;
+  }
+
+
+  .common-history-item {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+
+  .common-history-item span:nth-child(1),
+  .common-history-item span:nth-child(2),
+  .common-history-item span:nth-child(3),
+  .common-history-item button {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+
+  .common-history-item button {
+    width: 100%;
+
+    margin-top: 5px;
+  }
+}
