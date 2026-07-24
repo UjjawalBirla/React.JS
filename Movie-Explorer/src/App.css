@@ -1,0 +1,462 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #080808, #151515);
+  color: #fff;
+  min-height: 100vh;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  background: rgba(25, 25, 25, 0.95);
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+
+  padding: 1rem 5%;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+
+  animation: navbarDown 0.7s ease;
+}
+
+@keyframes navbarDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  color: #e50914;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.08);
+  text-shadow: 0 0 15px rgba(229, 9, 20, 0.7);
+}
+
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+
+  position: relative;
+
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #e50914;
+}
+
+/* Animated underline */
+
+.navbar a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 2px;
+
+  background: #e50914;
+
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+.home {
+  width: 100%;
+  padding: 20px;
+}
+
+
+/* =========================
+   SEARCH FORM
+========================= */
+
+.home form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 2rem auto;
+
+  animation: fadeIn 0.8s ease;
+}
+
+
+/* =========================
+   SEARCH INPUT
+========================= */
+
+.searchInput {
+  width: min(500px, 90%);
+
+  padding: 14px 20px;
+
+  border: 2px solid transparent;
+  border-radius: 30px;
+
+  background: #222;
+  color: white;
+
+  font-size: 16px;
+
+  outline: none;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+
+  transition: all 0.3s ease;
+}
+
+.searchInput::placeholder {
+  color: #999;
+}
+
+.searchInput:focus {
+  border-color: #e50914;
+
+  background: #292929;
+
+  box-shadow:
+    0 0 10px rgba(229, 9, 20, 0.4),
+    0 0 25px rgba(229, 9, 20, 0.2);
+
+  transform: scale(1.02);
+}
+
+.search-btn {
+  border: none;
+  outline: none;
+
+  background: #e50914;
+  color: white;
+
+  padding: 12px 25px;
+
+  margin: 5px;
+
+  border-radius: 30px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.search-btn:hover {
+  background: #ff1722;
+  transform: scale(1.05);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .search-form {
+    width: 92%;
+    margin: 25px auto;
+  }
+
+  .searchInput {
+    padding: 11px 14px;
+    font-size: 14px;
+  }
+
+  .search-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+
+
+/* =========================
+   MOVIE LIST
+========================= */
+
+.movie-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(200px, 1fr));
+
+  gap: 25px;
+
+  max-width: 1300px;
+
+  margin: auto;
+  padding: 20px;
+}
+
+
+/* =========================
+   MOVIE CARD
+========================= */
+
+.movie-card {
+  background: #1c1c1c;
+
+  padding: 12px;
+
+  border-radius: 14px;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+
+  animation: fadeUp 0.7s ease both;
+}
+
+.movie-card:hover {
+  transform: translateY(-10px) scale(1.03);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(229, 9, 20, 0.25);
+}
+
+
+/* =========================
+   MOVIE IMAGE
+========================= */
+
+.movie-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+.movie-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+
+/* =========================
+   MOVIE LINKS
+========================= */
+
+.movie-card a {
+  display: inline-block;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  margin-top: 12px;
+
+  font-weight: 600;
+
+  transition: color 0.3s ease;
+}
+
+.movie-card a:hover {
+  color: #e50914;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
+
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    gap: 1.5rem;
+
+    padding: 1rem;
+
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .movie-list {
+    grid-template-columns:
+      repeat(auto-fit, minmax(160px, 1fr));
+
+    gap: 18px;
+
+    padding: 10px;
+  }
+
+  .home {
+    padding: 10px;
+  }
+
+  .searchInput {
+    width: 100%;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    justify-content: center;
+
+    gap: 15px;
+
+    padding: 14px 10px;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+
+    font-size: 22px;
+  }
+
+  .navbar a {
+    font-size: 14px;
+  }
+
+  .home form {
+    margin: 1.5rem auto;
+  }
+
+  .searchInput {
+    width: 100%;
+
+    padding: 12px 16px;
+
+    font-size: 14px;
+  }
+
+  .movie-list {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+    padding: 5px;
+  }
+
+  .movie-card {
+    width: 100%;
+
+    padding: 8px;
+
+    border-radius: 10px;
+  }
+
+  .movie-card a {
+    font-size: 14px;
+  }
+}
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 350px) {
+
+  .movie-list {
+    grid-template-columns: 1fr;
+  }
+}

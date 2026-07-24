@@ -1,0 +1,176 @@
+/* =========================
+   MOVIE DETAIL PAGE
+========================= */
+
+.movie-detail {
+  width: 90%;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 35px;
+
+  background: linear-gradient(145deg, #1b1b1b, #111);
+  border: 1px solid #2d2d2d;
+  border-radius: 20px;
+
+  color: #fff;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+
+  animation: detailFade 0.7s ease;
+}
+
+
+/* TITLE */
+
+.movie-detail h2 {
+  text-align: center;
+
+  font-size: 34px;
+  margin-bottom: 30px;
+
+  color: #e50914;
+
+  letter-spacing: 1px;
+}
+
+
+/* POSTER */
+
+.movie-detail img {
+  display: block;
+
+  width: 280px;
+  max-width: 100%;
+
+  margin: 0 auto 30px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+
+  transition: 0.4s ease;
+}
+
+.movie-detail img:hover {
+  transform: scale(1.04);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(229, 9, 20, 0.25);
+}
+
+
+/* MOVIE INFORMATION */
+
+.movie-detail p {
+  max-width: 750px;
+
+  margin: 12px auto;
+  padding: 13px 18px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border-left: 3px solid #e50914;
+  border-radius: 7px;
+
+  color: #ccc;
+
+  font-size: 16px;
+  line-height: 1.6;
+
+  transition: 0.3s ease;
+}
+
+.movie-detail p:hover {
+  background: rgba(229, 9, 20, 0.08);
+  transform: translateX(5px);
+}
+
+
+/* LABELS */
+
+.movie-detail strong {
+  color: #fff;
+  margin-right: 5px;
+}
+
+
+/* PAGE LOAD ANIMATION */
+
+@keyframes detailFade {
+
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+  .movie-detail {
+    width: 92%;
+    margin: 30px auto;
+    padding: 25px;
+  }
+
+  .movie-detail h2 {
+    font-size: 28px;
+  }
+
+  .movie-detail img {
+    width: 240px;
+  }
+
+  .movie-detail p {
+    font-size: 15px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .movie-detail {
+    width: 94%;
+
+    margin: 20px auto;
+    padding: 15px;
+
+    border-radius: 12px;
+  }
+
+  .movie-detail h2 {
+    font-size: 23px;
+    margin-bottom: 20px;
+  }
+
+  .movie-detail img {
+    width: 200px;
+    border-radius: 10px;
+  }
+
+  .movie-detail p {
+    padding: 10px 12px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+  }
+
+  .movie-detail p:hover {
+    transform: none;
+  }
+}
