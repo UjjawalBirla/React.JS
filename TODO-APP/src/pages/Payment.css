@@ -400,3 +400,19 @@ body.dark-mode .search-input::placeholder {
     color: white;
     box-shadow: 0 0 20px rgba(239,68,68,.5);
 }
+@media (max-width: 768px) {
+
+    .expense-item{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .middle{
+        align-items: flex-start;
+    }
+
+    .delete-btn{
+        align-self: flex-end;
+    }
+
+}
