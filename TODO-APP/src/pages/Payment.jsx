@@ -92,6 +92,9 @@ function Payment() {
     }
     return total;
   }, 0);
+  const filteredExpenses = expenses.filter((expense) =>
+    expense.title.toLowerCase().includes(search.toLowerCase()),
+  );
 
   return (
     <div className="payment-container">
@@ -121,13 +124,7 @@ function Payment() {
           🗑️ History
         </NavLink>
       </nav>
-          <input
-  type="text"
-  placeholder="🔍 Search Expense..."
-  value={search}
-  onChange={(e) => setSearch(e.target.value)}
-  className="search-input"
-/>
+
       {/* Payment Routes */}
 
       <Routes>
@@ -137,6 +134,13 @@ function Payment() {
           index
           element={
             <>
+              <input
+                type="text"
+                placeholder="🔍 Search Expense..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="search-input"
+              />
               <ExpenseForm onAddExpense={addExpenses} />
 
               <h3 className="total-expense">
@@ -151,7 +155,10 @@ function Payment() {
                 💸 Total Sent: ₹{totalSent.toFixed(2)}
               </h3>
 
-              <ExpenseList expenses={expenses} onDelete={deleteExpense} />
+              <ExpenseList
+                expenses={filteredExpenses}
+                onDelete={deleteExpense}
+              />
             </>
           }
         />

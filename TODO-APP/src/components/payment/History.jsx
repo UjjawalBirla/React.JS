@@ -6,9 +6,14 @@ function History({ history, onRestore, type }) {
     const saved = localStorage.getItem("todoHistory");
     return saved ? JSON.parse(saved) : [];
   });
-
+const [search, setSearch] = useState("");
   const currentHistory = type === "todo" ? todoHistory : history;
 
+   const filteredHistory = currentHistory.filter((item) =>
+  (type === "todo" ? item.text : item.title)
+    .toLowerCase()
+    .includes(search.toLowerCase())
+);
   if (currentHistory.length === 0) {
     return (
       <p className="common-history-empty">
@@ -16,6 +21,7 @@ function History({ history, onRestore, type }) {
       </p>
     );
   }
+ 
 
   const restoreTodo = (id) => {
     const savedTodos = JSON.parse(localStorage.getItem("todos")) || [];
@@ -34,12 +40,22 @@ function History({ history, onRestore, type }) {
 
     setTodoHistory(updatedHistory);
   };
+  
 
   return (
     <div className="common-history">
       <h2 >🗑️ {type === "todo" ? "Todo History" : "Payment History"}</h2>
+      <input
+  type="text"
+  placeholder={`🔍 Search ${
+    type === "todo" ? "Todo" : "Payment"
+  } History...`}
+  value={search}
+  onChange={(e) => setSearch(e.target.value)}
+  className="search-input"
+/>
 
-      {currentHistory.map((item) => (
+      {filteredHistory.map((item) => (
         <div className="common-history-item" key={item.id}>
           {type === "todo" ? (
             <span>{item.text}</span>

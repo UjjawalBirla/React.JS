@@ -370,3 +370,28 @@ body.dark-mode .common-history-empty {
     margin-top: 5px;
   }
 }
+
+.search-input {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  border-color: #4f46e5;
+}
+
+body.dark-mode .search-input {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+body.dark-mode .search-input::placeholder {
+  color: #ddd;
+}

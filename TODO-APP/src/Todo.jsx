@@ -3,6 +3,7 @@ import "./Todo.css";
 
 function Todo() {
   const [newTodo, setNewTodo] = useState("");
+  const [search, setSearch] = useState("");
 
   // LocalStorage se todos load karna
   const [todos, setTodos] = useState(() => {
@@ -70,12 +71,22 @@ function Todo() {
 
     setTodoHistory((prev) => prev.filter((todo) => todo.id !== id));
   };
+  const filteredTodos = todos.filter((todo) =>
+  todo.text.toLowerCase().includes(search.toLowerCase())
+);
 
   return (
     <div className="box1" id="tasks">
       <h1>TODO APP</h1>
 
       <div className="box2">
+        <input
+  type="text"
+  placeholder="🔍 Search Todo..."
+  value={search}
+  onChange={(e) => setSearch(e.target.value)}
+  className="search-input"
+/>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -91,7 +102,10 @@ function Todo() {
       </div>
 
       <ul>
-        {todos.map((todo, index) => (
+        {filteredTodos.length === 0 ? (
+  <p className="no-todo">❌ No Todo Found</p>
+) : (
+         filteredTodos.map((todo, index) => (
           <li key={index}>
             <span
               onClick={() => handleComplete(index)}
@@ -108,7 +122,7 @@ function Todo() {
               Delete
             </button>
           </li>
-        ))}
+        )))}
       </ul>
     </div>
   );

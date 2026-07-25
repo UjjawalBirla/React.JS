@@ -371,3 +371,39 @@ body.dark-mode .box2 input::placeholder {
     width: 100%;
   }
 }
+
+.search-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  border-color: #4f46e5;
+}
+
+body.dark-mode .search-input {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border-color: rgba(255,255,255,0.3);
+}
+
+body.dark-mode .search-input::placeholder {
+  color: #ddd;
+}
+
+.no-todo {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #e63946;
+}
+
+body.dark-mode .no-todo {
+  color: #ff6b6b;
+}
