@@ -4,7 +4,7 @@ function ExpenseItem({ item, onDelete }) {
 
       <span>{item.title}</span>
 
-      <span>💲{item.amount}</span>
+      <span>₹{item.amount}</span>
 
       <span>{item.type}</span>
 

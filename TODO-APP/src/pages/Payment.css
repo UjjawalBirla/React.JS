@@ -8,12 +8,13 @@
   margin: 60px auto;
   padding: 28px;
 
-  background-color: rgb(122, 162, 162);
+  background-color: rgb(47, 51, 51);
 
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
 
   box-sizing: border-box;
+  
 }
 
 
@@ -240,3 +241,27 @@
   box-sizing: border-box;
 }
 
+/* =========================
+   PAYMENT DARK MODE
+========================= */
+
+body.dark-mode .payment-container > h1,
+body.dark-mode .payment-container .total-expense,
+body.dark-mode .payment-container .expense-item span,
+body.dark-mode .payment-container .no-expense {
+  color: white;
+}
+
+body.dark-mode .payment-container .expense-item {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .payment-container .expense-form input,
+body.dark-mode .payment-container .expense-form select {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+body.dark-mode .payment-container .expense-form input::placeholder {
+  color: #d1d1d1;
+}

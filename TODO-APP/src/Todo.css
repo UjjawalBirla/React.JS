@@ -240,7 +240,7 @@ ul {
 
   margin-bottom: 12px;
 
-  color: rgb(243, 240, 240);
+  color: #111;
 
   background: rgba(255, 255, 255, 0.12);
 
@@ -296,7 +296,7 @@ body.dark-mode .box2 input::placeholder {
 
 /* Todo hover */
 
-li:hover {
+.box1 li:hover {
   transform: translateX(5px) scale(1.02);
 
   background: rgba(218, 143, 143, 0.18);

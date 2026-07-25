@@ -13,6 +13,7 @@ function Payment() {
 
     return saved ? JSON.parse(saved) : [];
   });
+  const [search, setSearch] = useState("");
 
   const [history, setHistory] = useState(() => {
     const saved = localStorage.getItem("history");
@@ -65,9 +66,31 @@ function Payment() {
     setHistory((prev) => prev.filter((expense) => expense.id !== id));
   };
 
-  // Total Expense Calculate
+  // Total Balance Calculate
   const totalExpense = expenses.reduce((total, expense) => {
-    return total + Number(expense.amount);
+    if (expense.type === "receive") {
+      return total + Number(expense.amount);
+    }
+
+    if (expense.type === "send") {
+      return total - Number(expense.amount);
+    }
+
+    return total;
+  }, 0);
+
+  const totalReceived = expenses.reduce((total, expense) => {
+    if (expense.type === "receive") {
+      return total + Number(expense.amount);
+    }
+    return total;
+  }, 0);
+
+  const totalSent = expenses.reduce((total, expense) => {
+    if (expense.type === "send") {
+      return total + Number(expense.amount);
+    }
+    return total;
   }, 0);
 
   return (
@@ -98,7 +121,13 @@ function Payment() {
           🗑️ History
         </NavLink>
       </nav>
-
+          <input
+  type="text"
+  placeholder="🔍 Search Expense..."
+  value={search}
+  onChange={(e) => setSearch(e.target.value)}
+  className="search-input"
+/>
       {/* Payment Routes */}
 
       <Routes>
@@ -111,8 +140,15 @@ function Payment() {
               <ExpenseForm onAddExpense={addExpenses} />
 
               <h3 className="total-expense">
-                Total Expense: 💲
-                {totalExpense.toFixed(2)}
+                🏦 Current Balance: ₹{totalExpense.toFixed(2)}
+              </h3>
+
+              <h3 className="total-expense">
+                💰 Total Received: ₹{totalReceived.toFixed(2)}
+              </h3>
+
+              <h3 className="total-expense">
+                💸 Total Sent: ₹{totalSent.toFixed(2)}
               </h3>
 
               <ExpenseList expenses={expenses} onDelete={deleteExpense} />
