@@ -15,11 +15,19 @@ function ExpenseForm({ onAddExpense }) {
     }
 
     const newExpense = {
-      id: Date.now(),
-      title,
-      amount: parseFloat(amount),
-      type: type,
-    };
+  id: Date.now(),
+  title,
+  amount: parseFloat(amount),
+  type,
+  date: new Date().toLocaleString("en-IN", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  }),
+};
 
     onAddExpense(newExpense);
 
@@ -51,8 +59,8 @@ function ExpenseForm({ onAddExpense }) {
         value={type}
         onChange={(e) => setType(e.target.value)}
       >
-        <option value="receive">Receive</option>
-        <option value="send">Send</option>
+        <option value="receive">🟢 Receive</option>
+<option value="send">🔴 Send</option>
       </select>
 
       <button type="submit">Add Expense</button>

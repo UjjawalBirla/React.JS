@@ -1,18 +1,47 @@
 function ExpenseItem({ item, onDelete }) {
   return (
-    <div className="expense-item">
+   <div className="expense-item">
 
-      <span>{item.title}</span>
+  <div className="left">
+    <h2>{item.title}</h2>
 
-      <span>₹{item.amount}</span>
+    <p className="expense-date">
+      📅 {item.date}
+    </p>
+  </div>
 
-      <span>{item.type}</span>
+  <div className="middle">
+    <h2
+      className={
+        item.type === "receive"
+          ? "receive-amount"
+          : "send-amount"
+      }
+    >
+      {item.type === "receive" ? "+" : "-"} ₹{item.amount}
+    </h2>
 
-      <button onClick={() => onDelete(item.id)}>
-        ❌
-      </button>
+    <span
+      className={
+        item.type === "receive"
+          ? "status receive"
+          : "status send"
+      }
+    >
+      {item.type === "receive"
+        ? "🟢 Receive"
+        : "🔴 Send"}
+    </span>
+  </div>
 
-    </div>
+  <button
+    className="delete-btn"
+    onClick={() => onDelete(item.id)}
+  >
+    🗑️
+  </button>
+
+</div>
   );
 }
 

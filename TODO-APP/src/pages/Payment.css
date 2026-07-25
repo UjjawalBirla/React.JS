@@ -292,3 +292,111 @@ body.dark-mode .search-input {
 body.dark-mode .search-input::placeholder {
   color: #ddd;
 }
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    background: #3a3f40;
+    border-radius: 18px;
+
+    padding: 20px;
+
+    margin-bottom: 18px;
+
+    transition: .3s;
+}
+
+.expense-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.25);
+}
+
+/* Left */
+.left {
+    flex: 1;
+    min-width: 0;
+}
+
+.left h2 {
+    margin: 0;
+    font-size: clamp(24px, 4vw, 42px);
+    font-weight: 700;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.expense-date {
+    margin-top: 15px;
+    color: #cfcfcf;
+    font-size: clamp(12px, 2vw, 18px);
+}
+
+/* Middle */
+.middle {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.receive-amount,
+.send-amount {
+    margin: 0;
+    font-size: clamp(24px, 3vw, 38px);
+    font-weight: 700;
+}
+
+.receive-amount {
+    color: #22c55e;
+}
+
+.send-amount {
+    color: #ef4444;
+}
+
+.status {
+    font-size: clamp(14px, 2vw, 20px);
+    font-weight: 600;
+}
+
+.receive {
+    color: #22c55e;
+}
+
+.send {
+    color: #ef4444;
+}
+
+/* Delete Button */
+.delete-btn {
+    flex-shrink: 0;
+
+    width: clamp(55px, 8vw, 85px);
+    height: clamp(55px, 8vw, 85px);
+
+    border: none;
+    border-radius: 16px;
+
+    background: rgba(255, 0, 0, .12);
+    color: #ff4d4d;
+
+    font-size: clamp(22px, 3vw, 34px);
+
+    cursor: pointer;
+
+    transition: .3s;
+    margin-left: 60px;
+}
+
+.delete-btn:hover {
+    background: #ef4444;
+    color: white;
+    box-shadow: 0 0 20px rgba(239,68,68,.5);
+}
