@@ -1,0 +1,115 @@
+{
+  "quiz_title": "Weird & Tricky Quiz",
+  "questions": [
+    {
+      "id": 1,
+      "question": "If you throw a red stone into the Blue Sea, what will it become?",
+      "options": [
+        "Blue",
+        "Red",
+        "Wet",
+        "Invisible"
+      ],
+      "answer": "Wet"
+    },
+    {
+      "id": 2,
+      "question": "What gets wetter the more it dries?",
+      "options": [
+        "A Towel",
+        "A Fan",
+        "The Sun",
+        "A Hair Dryer"
+      ],
+      "answer": "A Towel"
+    },
+    {
+      "id": 3,
+      "question": "If an electric train is moving north, which way does its smoke go?",
+      "options": [
+        "North",
+        "South",
+        "East",
+        "There is no smoke"
+      ],
+      "answer": "There is no smoke"
+    },
+    {
+      "id": 4,
+      "question": "What has many keys but cannot open a single door?",
+      "options": [
+        "A Security Guard",
+        "A Piano",
+        "A Locksmith",
+        "A Treasure Box"
+      ],
+      "answer": "A Piano"
+    },
+    {
+      "id": 5,
+      "question": "Which month has 28 days?",
+      "options": [
+        "February",
+        "January",
+        "December",
+        "All months"
+      ],
+      "answer": "All months"
+    },
+    {
+      "id": 6,
+      "question": "What can travel around the world while staying in one corner?",
+      "options": [
+        "A Satellite",
+        "A Stamp",
+        "A Spider",
+        "A Camera"
+      ],
+      "answer": "A Stamp"
+    },
+    {
+      "id": 7,
+      "question": "What has a neck but no head?",
+      "options": [
+        "A Ghost",
+        "A Bottle",
+        "A Snake",
+        "A Robot"
+      ],
+      "answer": "A Bottle"
+    },
+    {
+      "id": 8,
+      "question": "If there are 10 fish in a tank and 3 drown, how many are left?",
+      "options": [
+        "7",
+        "3",
+        "10",
+        "0"
+      ],
+      "answer": "10"
+    },
+    {
+      "id": 9,
+      "question": "What belongs to you but other people use it more than you do?",
+      "options": [
+        "Your Phone",
+        "Your Money",
+        "Your Name",
+        "Your Shoes"
+      ],
+      "answer": "Your Name"
+    },
+    {
+      "id": 10,
+      "question": "A farmer has 17 sheep. All but 9 run away. How many sheep are left?",
+      "options": [
+        "8",
+        "9",
+        "17",
+        "0"
+      ],
+      "answer": "9"
+    }
+  ]
+}
