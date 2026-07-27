@@ -23,26 +23,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # -------------------------
-      # Checkout
-      # -------------------------
+      # =========================
+      # CHECKOUT
+      # =========================
       - name: Checkout
         uses: actions/checkout@v4
 
-
-      # -------------------------
-      # Node Setup
-      # -------------------------
+      # =========================
+      # NODE SETUP
+      # =========================
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-
       # =========================
       # TODO APP
       # =========================
-
       - name: Install TODO dependencies
         working-directory: TODO-APP
         run: npm ci
@@ -51,11 +48,9 @@ jobs:
         working-directory: TODO-APP
         run: npm run build
 
-
       # =========================
       # MOVIE EXPLORER
       # =========================
-
       - name: Install Movie Explorer dependencies
         working-directory: Movie-Explorer
         run: npm ci
@@ -66,24 +61,33 @@ jobs:
           VITE_OMDB_API_KEY: ${{ secrets.VITE_OMDB_API_KEY }}
         run: npm run build
 
+      # =========================
+      # QUIZ APP
+      # =========================
+      - name: Install Quiz App dependencies
+        working-directory: Quiz-App
+        run: npm ci
+
+      - name: Build Quiz App
+        working-directory: Quiz-App
+        run: npm run build
 
       # =========================
-      # CREATE FINAL WEBSITE
+      # PREPARE FINAL WEBSITE
       # =========================
-
       - name: Prepare GitHub Pages
         run: |
           mkdir -p site/TODO-APP
           mkdir -p site/Movie-Explorer
+          mkdir -p site/Quiz-App
 
           cp -r TODO-APP/dist/* site/TODO-APP/
           cp -r Movie-Explorer/dist/* site/Movie-Explorer/
+          cp -r Quiz-App/dist/* site/Quiz-App/
 
-
-      # -------------------------
-      # GitHub Pages
-      # -------------------------
-
+      # =========================
+      # DEPLOY
+      # =========================
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
@@ -95,27 +99,3 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
-
-
-      # =========================
-      # QUIZ APP
-      # =========================
-
-      - name: Install Quiz App dependencies
-        working-directory: Quiz-App
-        run: npm ci
-
-      - name: Build Quiz App
-        working-directory: Quiz-App
-        run: npm run build
-
-
-              - name: Prepare GitHub Pages
-        run: |
-          mkdir -p site/TODO-APP
-          mkdir -p site/Movie-Explorer
-          mkdir -p site/Quiz-App
-
-          cp -r TODO-APP/dist/* site/TODO-APP/
-          cp -r Movie-Explorer/dist/* site/Movie-Explorer/
-          cp -r Quiz-App/dist/* site/Quiz-App/
