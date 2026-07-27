@@ -1,86 +1,64 @@
 {
-  "quiz_title": "Weird & Tricky Quiz",
+  "quiz_title": "Ajab Gajab Hinglish Quiz",
   "questions": [
     {
       "id": 1,
-      "question": "If you throw a red stone into the Blue Sea, what will it become?",
+      "question": "Agar tum ek red stone ko Blue Sea me fenkoge, to wo kya ban jayega?",
       "options": [
         "Blue",
-        "Red",
+        "Green",
         "Wet",
-        "Invisible"
+        "Gayab"
       ],
       "answer": "Wet"
     },
     {
       "id": 2,
-      "question": "What gets wetter the more it dries?",
+      "question": "Aisi konsi cheez hai jo dusro ko dry karte-karte khud wet ho jati hai?",
       "options": [
-        "A Towel",
-        "A Fan",
-        "The Sun",
-        "A Hair Dryer"
+        "Fan",
+        "Towel",
+        "Hair Dryer",
+        "Sun"
       ],
-      "answer": "A Towel"
+      "answer": "Towel"
     },
     {
       "id": 3,
-      "question": "If an electric train is moving north, which way does its smoke go?",
+      "question": "Ek electric train North ki taraf ja rahi hai, uska smoke kis direction me jayega?",
       "options": [
         "North",
         "South",
         "East",
-        "There is no smoke"
+        "Smoke hi nahi hoga"
       ],
-      "answer": "There is no smoke"
+      "answer": "Smoke hi nahi hoga"
     },
     {
       "id": 4,
-      "question": "What has many keys but cannot open a single door?",
+      "question": "Aisi konsi cheez hai jiske paas bahut saari keys hain, lekin ek bhi lock open nahi kar sakti?",
       "options": [
-        "A Security Guard",
-        "A Piano",
-        "A Locksmith",
-        "A Treasure Box"
+        "Keyboard",
+        "Piano",
+        "Locksmith",
+        "Dono Keyboard aur Piano"
       ],
-      "answer": "A Piano"
+      "answer": "Dono Keyboard aur Piano"
     },
     {
       "id": 5,
-      "question": "Which month has 28 days?",
+      "question": "Saal ke kitne months me 28 days hote hain?",
       "options": [
-        "February",
-        "January",
-        "December",
-        "All months"
+        "Sirf February",
+        "6 Months",
+        "11 Months",
+        "Saare 12 Months"
       ],
-      "answer": "All months"
+      "answer": "Saare 12 Months"
     },
     {
       "id": 6,
-      "question": "What can travel around the world while staying in one corner?",
-      "options": [
-        "A Satellite",
-        "A Stamp",
-        "A Spider",
-        "A Camera"
-      ],
-      "answer": "A Stamp"
-    },
-    {
-      "id": 7,
-      "question": "What has a neck but no head?",
-      "options": [
-        "A Ghost",
-        "A Bottle",
-        "A Snake",
-        "A Robot"
-      ],
-      "answer": "A Bottle"
-    },
-    {
-      "id": 8,
-      "question": "If there are 10 fish in a tank and 3 drown, how many are left?",
+      "question": "Ek tank me 10 fish hain. Agar 3 fish doob jayein, to tank me kitni fish bachengi?",
       "options": [
         "7",
         "3",
@@ -90,19 +68,30 @@
       "answer": "10"
     },
     {
-      "id": 9,
-      "question": "What belongs to you but other people use it more than you do?",
+      "id": 7,
+      "question": "Aisi konsi cheez hai jiska neck hota hai lekin head nahi hota?",
       "options": [
-        "Your Phone",
-        "Your Money",
-        "Your Name",
-        "Your Shoes"
+        "Snake",
+        "Bottle",
+        "Robot",
+        "Ghost"
       ],
-      "answer": "Your Name"
+      "answer": "Bottle"
     },
     {
-      "id": 10,
-      "question": "A farmer has 17 sheep. All but 9 run away. How many sheep are left?",
+      "id": 8,
+      "question": "Tumhare paas aisi konsi cheez hai jise tumse zyada dusre log use karte hain?",
+      "options": [
+        "Tumhara Phone",
+        "Tumhare Shoes",
+        "Tumhara Name",
+        "Tumhara Wallet"
+      ],
+      "answer": "Tumhara Name"
+    },
+    {
+      "id": 9,
+      "question": "Ek farmer ke paas 17 sheep thi. All but 9 bhaag gayi. Kitni sheep bachi?",
       "options": [
         "8",
         "9",
@@ -110,6 +99,17 @@
         "0"
       ],
       "answer": "9"
+    },
+    {
+      "id": 10,
+      "question": "Aisi konsi cheez hai jo tootne ke baad hi use hoti hai?",
+      "options": [
+        "Glass",
+        "Egg",
+        "Phone",
+        "Chair"
+      ],
+      "answer": "Egg"
     }
   ]
 }
