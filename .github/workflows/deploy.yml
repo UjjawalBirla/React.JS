@@ -95,3 +95,27 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+
+
+      # =========================
+      # QUIZ APP
+      # =========================
+
+      - name: Install Quiz App dependencies
+        working-directory: Quiz-App
+        run: npm ci
+
+      - name: Build Quiz App
+        working-directory: Quiz-App
+        run: npm run build
+
+
+              - name: Prepare GitHub Pages
+        run: |
+          mkdir -p site/TODO-APP
+          mkdir -p site/Movie-Explorer
+          mkdir -p site/Quiz-App
+
+          cp -r TODO-APP/dist/* site/TODO-APP/
+          cp -r Movie-Explorer/dist/* site/Movie-Explorer/
+          cp -r Quiz-App/dist/* site/Quiz-App/
